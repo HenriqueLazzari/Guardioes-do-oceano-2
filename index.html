@@ -1,0 +1,132 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#061b2b">
+  <meta name="description" content="Uma aventura interativa sobre ciência e preservação dos oceanos.">
+  <title>Guardiões do Oceano</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="ocean-background" aria-hidden="true">
+    <div class="bubble bubble-one"></div>
+    <div class="bubble bubble-two"></div>
+    <div class="bubble bubble-three"></div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio" id="brandHome">
+      <span class="brand-icon">◈</span>
+      <span><strong>GUARDIÕES</strong><small>DO OCEANO</small></span>
+    </a>
+
+    <div class="chapter-label">
+      <span class="live-dot"></span>
+      <span id="chapterLabel">PRÓLOGO</span>
+    </div>
+
+    <button class="restart-button" id="restartTop" type="button">
+      ↻ Recomeçar
+    </button>
+  </header>
+
+  <main class="layout" id="inicio">
+    <aside class="status-panel">
+      <div class="panel-heading">⌁ PAINEL DA MISSÃO</div>
+
+      <div class="mission-status">
+        <span class="status-icon">◎</span>
+        <div>
+          <small>STATUS</small>
+          <strong id="statusText">Missão iniciada</strong>
+        </div>
+      </div>
+
+      <div class="stat-block">
+        <div class="stat-label">
+          <span>Saúde do oceano</span>
+          <strong id="oceanValue">64%</strong>
+        </div>
+        <div class="meter">
+          <span id="oceanMeter" class="meter-ocean"></span>
+        </div>
+      </div>
+
+      <div class="stat-block">
+        <div class="stat-label">
+          <span>Confiança em Neri</span>
+          <strong id="trustValue">50%</strong>
+        </div>
+        <div class="meter">
+          <span id="trustMeter" class="meter-trust"></span>
+        </div>
+      </div>
+
+      <div class="stat-block">
+        <div class="stat-label">
+          <span>Dados científicos</span>
+          <strong id="dataValue">0</strong>
+        </div>
+        <div class="meter">
+          <span id="dataMeter" class="meter-data"></span>
+        </div>
+      </div>
+
+      <div class="inventory-heading">▤ ITENS COLETADOS</div>
+      <ul class="inventory" id="inventoryList">
+        <li class="empty-inventory">Nenhum item encontrado.</li>
+      </ul>
+
+      <p class="panel-note">
+        ✦ Cada escolha deixa uma marca. Algumas consequências só aparecem mais tarde.
+      </p>
+    </aside>
+
+    <section class="story-panel" aria-live="polite">
+      <div class="story-meta">
+        <span class="eyebrow" id="sceneTag">REGISTRO 001 · ATLÂNTICO SUL</span>
+        <span class="scene-count" id="sceneCount">01 / 08</span>
+      </div>
+
+      <div class="hero-art" id="heroArt" role="img"
+           aria-label="Ilustração estilizada de uma nave alienígena no oceano">
+        <div class="art-glow"></div>
+        <div class="art-beam"></div>
+        <div class="art-ship"><span></span></div>
+        <div class="art-seafloor"></div>
+        <div class="coral coral-left"></div>
+        <div class="coral coral-right"></div>
+        <div class="art-caption" id="artCaption">ATLÂNTICO SUL · 2047</div>
+      </div>
+
+      <div class="story-copy">
+        <h1 id="storyTitle">O chamado das profundezas</h1>
+        <p class="story-text" id="storyText"></p>
+        <p class="story-extra" id="storyExtra"></p>
+      </div>
+
+      <div class="choice-area">
+        <div class="choice-heading">
+          <span>DECISÃO NECESSÁRIA</span>
+          <span class="choice-line"></span>
+        </div>
+        <div class="choices" id="choices"></div>
+      </div>
+
+      <footer class="story-footer">
+        <span>GUARDIÕES DO OCEANO · EXPERIÊNCIA NARRATIVA</span>
+        <span id="footerHint">Escolha com atenção</span>
+      </footer>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    Este jogo precisa do JavaScript ativado no navegador.
+  </noscript>
+</body>
+</html>
